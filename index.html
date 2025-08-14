@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Q2 Earnings — Interactive RevealJS Deck</title>
+  <meta name="description" content="Interactive quarterly earnings presentation with fragments, code, markdown, math, notes." />
+
+  <!-- RevealJS core CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/league.css" id="theme" />
+
+  <!-- Syntax highlighting theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/monokai.css" />
+
+  <!-- KaTeX for math rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+
+  <style>
+    .reveal .footer {
+      position: fixed;
+      left: 0; right: 0; bottom: 10px;
+      text-align: center;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+    .brand-pill {
+      display: inline-block; padding: 6px 12px; border-radius: 9999px; border: 1px solid #888; font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Title slide -->
+      <section>
+        <h1>Quarterly Earnings Report</h1>
+        <h3 class="fragment">Modern, Interactive Presentation</h3>
+        <p class="fragment brand-pill">Technical Consultant · Finance</p>
+        <p class="fragment">Contact: <strong>24f1001136@ds.study.iitm.ac.in</strong></p>
+        <aside class="notes">
+          Welcome everyone. This deck is built with RevealJS to showcase interactive capabilities—fragments, Markdown, math, code highlighting, and speaker notes.
+        </aside>
+      </section>
+
+      <!-- Agenda with fragments (animated elements) -->
+      <section>
+        <h2>Agenda</h2>
+        <ul>
+          <li class="fragment">Macro snapshot</li>
+          <li class="fragment">Financial highlights</li>
+          <li class="fragment">KPIs & cohort insights</li>
+          <li class="fragment">Tech demo (code & automation)</li>
+          <li class="fragment">Q&A</li>
+        </ul>
+        <aside class="notes">
+          Step through the agenda using the right arrow. Each bullet animates as a fragment to keep focus.
+        </aside>
+      </section>
+
+      <!-- Markdown slide -->
+      <section data-markdown>
+        <textarea data-template>
+### Financial Highlights _(Markdown)_
+
+- **Revenue:** $1.24B _(↑ 8% YoY)_
+- **Operating Margin:** 21.4%
+- **Free Cash Flow:** $312M
+- **EPS (Diluted):** $1.06
+
+> Notes: All figures are illustrative for demo purposes.
+        </textarea>
+        <aside class="notes">
+          This entire slide is written in Markdown using the built-in Reveal Markdown plugin.
+        </aside>
+      </section>
+
+      <!-- Code samples with syntax highlighting -->
+      <section>
+        <h2>Automation Snippet (Code Highlight)</h2>
+        <pre><code class="language-python"># ETL: Load earnings CSV, compute QoQ growth, push to dashboard
+import pandas as pd
+
+# Pretend data
+q1 = pd.Series({"revenue": 1146.2, "eps": 0.98})
+q2 = pd.Series({"revenue": 1240.5, "eps": 1.06})
+
+qoq = (q2 - q1) / q1
+print("QoQ Growth%:", (qoq * 100).round(2).to_dict())
+
+# Tip: Use CI/CD to auto-publish updated charts to GitHub Pages
+        </code></pre>
+        <aside class="notes">
+          This code sample demonstrates syntax highlighting via the Highlight plugin. You can swap languages using language-xxx classes.
+        </aside>
+      </section>
+
+      <!-- Math (financial formulas) -->
+      <section>
+        <h2>Key Financial Equations</h2>
+        <p>Net Present Value (NPV):</p>
+        <p>\[ \mathrm{NPV} = \sum_{t=0}^{T} \frac{CF_t}{(1+r)^t} \]</p>
+        <p>Compound Annual Growth Rate (CAGR):</p>
+        <p>\[ \mathrm{CAGR} = \left( \frac{\text{Ending}}{\text{Beginning}} \right)^{\tfrac{1}{n}} - 1 \]</p>
+        <p>Return on Equity (ROE):</p>
+        <p>\[ \mathrm{ROE} = \frac{\text{Net Income}}{\text{Shareholders'\,Equity}} \]</p>
+        <aside class="notes">
+          These are rendered with KaTeX via the Reveal Math plugin. Mention how these tie into valuation and profitability discussion.
+        </aside>
+      </section>
+
+      <!-- KPI slide with fragments for staged reveal -->
+      <section>
+        <h2>KPI Rollup</h2>
+        <div class="fragment">ARR: <strong>$4.8B</strong></div>
+        <div class="fragment">Net Retention Rate: <strong>121%</strong></div>
+        <div class="fragment">Gross Margin: <strong>78%</strong></div>
+        <div class="fragment">Debt/EBITDA: <strong>1.6×</strong></div>
+        <aside class="notes">
+          Progressively reveal KPIs. Pause to discuss each metric.
+        </aside>
+      </section>
+
+      <!-- Contact / email explicitly included -->
+      <section>
+        <h2>Contact</h2>
+        <p>Email: <strong>24f1001136@ds.study.iitm.ac.in</strong></p>
+        <p class="fragment">Slides: Host on GitHub Pages and share the URL with stakeholders.</p>
+        <aside class="notes">
+          Reiterate contact and distribution plan. Remind audience they can refresh with cache-busting query params.
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- RevealJS core + plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/markdown/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/notes/notes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/highlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/math/math.js"></script>
+
+  <script>
+    // Initialize Reveal
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
+      // Math plugin config (KaTeX)
+      math: {
+        katex: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/',
+        // Enable both $...$ and \( ... \)
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false },
+          { left: '\\(', right: '\\)', display: false },
+          { left: '\\[', right: '\\]', display: true }
+        ]
+      }
+    });
+  </script>
+
+  <div class="footer">Use ← → for navigation · Press <kbd>S</kbd> for speaker notes</div>
+</body>
+</html>
